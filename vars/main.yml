@@ -1,0 +1,7 @@
+---
+# vars file for operator_sdk
+operator_sdk_exe: operator-sdk-{{ operator_sdk_ver }}-{{ operator_sdk_arch }}-{{ operator_sdk_os }}
+operator_sdk_url: '{{ operator_sdk_mirror }}/{{ operator_sdk_ver }}/{{ operator_sdk_exe }}'
+operator_sdk_checksum: '{{ operator_sdk_checksums[operator_sdk_ver][operator_sdk_arch][operator_sdk_os] }}'
+operator_sdk_installed_exe: '{{ operator_sdk_install_dir }}/{{ operator_sdk_exe }}'
+operator_sdk_link: '{{ operator_sdk_install_dir }}/operator-sdk'
