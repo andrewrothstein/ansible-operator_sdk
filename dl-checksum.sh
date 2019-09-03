@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-VER=v0.9.0
+VER=v0.10.0
 DIR=~/Downloads
 MIRROR=https://github.com/operator-framework/operator-sdk/releases/download/${VER}
 
