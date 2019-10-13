@@ -1,23 +1,23 @@
 #!/usr/bin/env sh
-VER=v0.10.0
+VER=v0.11.0
 DIR=~/Downloads
 MIRROR=https://github.com/operator-framework/operator-sdk/releases/download/${VER}
 
 dl()
 {
-    OS=$1
-    ARCH=$2
-    FILE=operator-sdk-${VER}-${ARCH}-${OS}
-    URL=$MIRROR/$FILE
-    LFILE=$DIR/$FILE
+    local os=$1
+    local arch=$2
+    local file=operator-sdk-${VER}-${arch}-${os}
+    local url=$MIRROR/$file
+    local lfile=$DIR/$file
 
-    if [ ! -e $LFILE ];
+    if [ ! -e $lfile ];
     then
-        wget -q -O $LFILE $URL
+        wget -q -O $lfile $url
     fi
 
-    printf "      # %s\n" $URL
-    printf "      %s: sha256:%s\n" $OS `sha256sum $LFILE | awk '{print $1}'`
+    printf "      # %s\n" $url
+    printf "      %s: sha256:%s\n" $os `sha256sum $lfile | awk '{print $1}'`
 }
 
 printf "  %s:\n" $VER
