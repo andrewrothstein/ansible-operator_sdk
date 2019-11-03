@@ -1,14 +1,14 @@
 #!/usr/bin/env sh
-VER=${1:-v0.11.0}
 DIR=~/Downloads
-MIRROR=https://github.com/operator-framework/operator-sdk/releases/download/${VER}
+MIRROR=https://github.com/operator-framework/operator-sdk/releases/download
 
 dl()
 {
-    local os=$1
-    local arch=$2
-    local file=operator-sdk-${VER}-${arch}-${os}
-    local url=$MIRROR/$file
+    local ver=$1
+    local os=$2
+    local arch=$3
+    local file=operator-sdk-${ver}-${arch}-${os}
+    local url=$MIRROR/$ver/$file
     local lfile=$DIR/$file
 
     if [ ! -e $lfile ];
@@ -20,9 +20,12 @@ dl()
     printf "      %s: sha256:%s\n" $os `sha256sum $lfile | awk '{print $1}'`
 }
 
-printf "  %s:\n" $VER
-printf "    %s:\n" x86_64
-dl linux-gnu x86_64
-dl apple-darwin x86_64
+dl_ver() {
+    local ver=$1
+    printf "  %s:\n" $ver
+    printf "    %s:\n" x86_64
+    dl $ver linux-gnu x86_64
+    dl $ver apple-darwin x86_64
+}
 
-
+dl_ver ${1:-v0.12.0}
