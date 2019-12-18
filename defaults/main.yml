@@ -1,6 +1,6 @@
 ---
 # defaults file for operator_sdk
-operator_sdk_ver: v0.12.0
+operator_sdk_ver: v0.13.0
 
 operator_sdk_mirror: https://github.com/operator-framework/operator-sdk/releases/download
 operator_sdk_arch: x86_64
@@ -38,3 +38,9 @@ operator_sdk_checksums:
       linux-gnu: sha256:3c307bf4d9b0ec520d36864128b6e6a315c79e46ab6ec36eba9492d402f6e491
       # https://github.com/operator-framework/operator-sdk/releases/download/v0.12.0/operator-sdk-v0.12.0-x86_64-apple-darwin
       apple-darwin: sha256:e6c37a3b69e06b864d2fe5a7fb1a067ab70da5d07ab358f0fd70c90b0ebda4dc
+  v0.13.0:
+    x86_64:
+      # https://github.com/operator-framework/operator-sdk/releases/download/v0.13.0/operator-sdk-v0.13.0-x86_64-linux-gnu
+      linux-gnu: sha256:18446d7f31ffcf059be22f767d66a7df585e81b596a3f3e91e3a8eba571eb927
+      # https://github.com/operator-framework/operator-sdk/releases/download/v0.13.0/operator-sdk-v0.13.0-x86_64-apple-darwin
+      apple-darwin: sha256:7ccfecabb8ba0e1d20703f64ff3d2f630c2dc254705cd36917afb85511c40e79

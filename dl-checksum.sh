@@ -28,4 +28,4 @@ dl_ver() {
     dl $ver apple-darwin x86_64
 }
 
-dl_ver ${1:-v0.12.0}
+dl_ver ${1:-v0.13.0}
