@@ -80,3 +80,9 @@ operator_sdk_checksums:
       linux-gnu: sha256:bb9817dc2586232f6eb7fa045c15f761b452fb3fb1215dc8398b10626e7354e5
       # https://github.com/operator-framework/operator-sdk/releases/download/v0.16.0/operator-sdk-v0.16.0-x86_64-apple-darwin
       apple-darwin: sha256:f7516433bc01b3cce4dafc9f6c95ede2f55fd73ac2349cc8a9e5e862bc9722f0
+  v0.17.0:
+    x86_64:
+      # https://github.com/operator-framework/operator-sdk/releases/download/v0.17.0/operator-sdk-v0.17.0-x86_64-linux-gnu
+      linux-gnu: sha256:f801a4a061c175fdb4875fbb021d4f8cae9c57cc1c00829ab2de4edf733e1963
+      # https://github.com/operator-framework/operator-sdk/releases/download/v0.17.0/operator-sdk-v0.17.0-x86_64-apple-darwin
+      apple-darwin: sha256:bd6dd16e4829cab29944cfe4dead336bcef9c201495a75fe67c7a03d6fd74882
