@@ -1,6 +1,6 @@
 ---
 # defaults file for operator_sdk
-operator_sdk_ver: v0.16.0
+operator_sdk_ver: v0.17.0
 
 operator_sdk_mirror: https://github.com/operator-framework/operator-sdk/releases/download
 operator_sdk_arch: x86_64
