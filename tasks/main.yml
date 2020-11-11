@@ -9,7 +9,7 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: download
+- name: downloading {{ operator_sdk_url }} to {{ operator_sdk_installed_exe }}
   become: yes
   become_user: root
   get_url:
@@ -17,7 +17,7 @@
     dest: '{{ operator_sdk_installed_exe }}'
     checksum: '{{ operator_sdk_checksum }}'
     mode: 0755
-- name: link
+- name: linking {{ operator_sdk_link }} to {{ operator_sdk_installed_exe }}
   become: yes
   become_user: root
   file:
