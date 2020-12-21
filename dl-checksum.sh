@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
+set -e
 DIR=~/Downloads
+# https://github.com/operator-framework/operator-sdk/releases/download/v1.3.0/operator-sdk_linux_amd64
 MIRROR=https://github.com/operator-framework/operator-sdk/releases/download
 
 dl()
@@ -7,7 +9,8 @@ dl()
     local ver=$1
     local os=$2
     local arch=$3
-    local file=operator-sdk-${ver}-${arch}-${os}
+    local platform="${os}_${arch}"
+    local file=operator-sdk_${platform}
     local url=$MIRROR/$ver/$file
     local lfile=$DIR/$file
 
@@ -17,15 +20,17 @@ dl()
     fi
 
     printf "      # %s\n" $url
-    printf "      %s: sha256:%s\n" $os `sha256sum $lfile | awk '{print $1}'`
+    printf "      %s: sha256:%s\n" $platform `sha256sum $lfile | awk '{print $1}'`
 }
 
 dl_ver() {
     local ver=$1
     printf "  %s:\n" $ver
-    printf "    %s:\n" x86_64
-    dl $ver linux-gnu x86_64
-    dl $ver apple-darwin x86_64
+    dl $ver darwin amd64
+    dl $ver linux amd64
+    dl $ver linux arm64
+    dl $ver linux ppc64le
+    dl $ver linux s390x
 }
 
-dl_ver ${1:-v1.2.0}
+dl_ver ${1:-v1.3.0}
