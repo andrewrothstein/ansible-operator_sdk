@@ -12,7 +12,7 @@ dl()
     local platform="${os}_${arch}"
     local file=operator-sdk_${platform}
     local url=$MIRROR/$ver/$file
-    local lfile=$DIR/$file
+    local lfile=$DIR/$file-${ver}
 
     if [ ! -e $lfile ];
     then
@@ -33,4 +33,4 @@ dl_ver() {
     dl $ver linux s390x
 }
 
-dl_ver ${1:-v1.4.0}
+dl_ver ${1:-v1.4.2}
