@@ -19,8 +19,8 @@ dl()
         wget -q -O $lfile $url
     fi
 
-    printf "      # %s\n" $url
-    printf "      %s: sha256:%s\n" $platform `sha256sum $lfile | awk '{print $1}'`
+    printf "    # %s\n" $url
+    printf "    %s: sha256:%s\n" $platform `sha256sum $lfile | awk '{print $1}'`
 }
 
 dl_ver() {
@@ -33,4 +33,4 @@ dl_ver() {
     dl $ver linux s390x
 }
 
-dl_ver ${1:-v1.9.0}
+dl_ver ${1:-v1.10.0}
