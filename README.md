@@ -1,6 +1,6 @@
 andrewrothstein.operator_sdk
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-operator_sdk.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-operator_sdk)
+![Build Status](https://github.com/andrewrothstein/ansible-operator_sdk/actions/workflows/build.yml/badge.svg)
 
 Installs the [operator-sdk](https://coreos.com/operators/)
 
