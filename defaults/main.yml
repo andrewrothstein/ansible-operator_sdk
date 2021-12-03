@@ -1,6 +1,6 @@
 ---
 # defaults file for operator_sdk
-operator_sdk_ver: v1.14.0
+operator_sdk_ver: v1.15.0
 
 operator_sdk_mirror: https://github.com/operator-framework/operator-sdk/releases/download
 operator_sdk_os: linux
@@ -162,3 +162,14 @@ operator_sdk_checksums:
     linux_ppc64le: sha256:69e5eaadfcbe5864e99c8dd644a215bae2057b47e96e3e4bbc805e876d8755ec
     # https://github.com/operator-framework/operator-sdk/releases/download/v1.14.0/operator-sdk_linux_s390x
     linux_s390x: sha256:7f655edc3adc07b712c0b254e9b3d2ba6e4f8fefe67087f53e51879b6ca633ac
+  v1.15.0:
+    # https://github.com/operator-framework/operator-sdk/releases/download/v1.15.0/operator-sdk_darwin_amd64
+    darwin_amd64: sha256:5fc30d04a31736449adb5c9b0b44e78ebeaa5cf968cc7afcbdf533135b72e31a
+    # https://github.com/operator-framework/operator-sdk/releases/download/v1.15.0/operator-sdk_linux_amd64
+    linux_amd64: sha256:d2065f1f7a0d03643ad71e396776dac0ee809ef33195e0f542773b377bab1b2a
+    # https://github.com/operator-framework/operator-sdk/releases/download/v1.15.0/operator-sdk_linux_arm64
+    linux_arm64: sha256:ba8fc1b2175c665a0b5be977e38a5fc6c69d45ac597dd01f6d382fee03e229b5
+    # https://github.com/operator-framework/operator-sdk/releases/download/v1.15.0/operator-sdk_linux_ppc64le
+    linux_ppc64le: sha256:b9321197fd83208b4ea66fd7a53b9806bebad9e66594a21366c6e71c50aa6e5b
+    # https://github.com/operator-framework/operator-sdk/releases/download/v1.15.0/operator-sdk_linux_s390x
+    linux_s390x: sha256:665bbe3fe7aa84271a1125e50e0f932cb9abf869a1bfb207ea120c610e30dcd9
