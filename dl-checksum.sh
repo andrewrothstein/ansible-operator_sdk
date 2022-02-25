@@ -16,7 +16,7 @@ dl()
 
     if [ ! -e $lfile ];
     then
-        wget -q -O $lfile $url
+        curl -sSLf -o $lfile $url
     fi
 
     printf "    # %s\n" $url
@@ -33,4 +33,4 @@ dl_ver() {
     dl $ver linux s390x
 }
 
-dl_ver ${1:-v1.16.0}
+dl_ver ${1:-v1.17.0}
