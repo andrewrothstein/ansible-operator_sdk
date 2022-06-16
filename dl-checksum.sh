@@ -27,10 +27,11 @@ dl_ver() {
     local ver=$1
     printf "  %s:\n" $ver
     dl $ver darwin amd64
+    dl $ver darwin arm64
     dl $ver linux amd64
     dl $ver linux arm64
     dl $ver linux ppc64le
     dl $ver linux s390x
 }
 
-dl_ver ${1:-v1.21.0}
+dl_ver ${1:-v1.22.0}
