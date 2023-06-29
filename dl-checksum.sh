@@ -34,4 +34,4 @@ dl_ver() {
     dl $ver linux s390x
 }
 
-dl_ver ${1:-v1.29.0}
+dl_ver ${1:-v1.30.0}
