@@ -1,9 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.operator_sdk
+  hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
   tasks:
-  - command: /usr/local/bin/operator-sdk version
-    register: operator_sdk_test_output
-  - debug:
-      msg: '{{ operator_sdk_test_output.stdout }}'
+    - name: Executing 'operator-sdk version'
+      ansible.builtin.command: /usr/local/bin/operator-sdk version
+      changed_when: false
+      register: operator_sdk_test_output
+    - name: Output from 'operator-sdk version'
+      ansible.builtin.debug:
+        msg: '{{ operator_sdk_test_output.stdout }}'
