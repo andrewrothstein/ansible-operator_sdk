@@ -6,32 +6,36 @@ MIRROR=https://github.com/operator-framework/operator-sdk/releases/download
 
 dl()
 {
-    local ver=$1
-    local os=$2
-    local arch=$3
+    local lchecksums=$1
+    local ver=$2
+    local os=$3
+    local arch=$4
     local platform="${os}_${arch}"
     local file=operator-sdk_${platform}
     local url=$MIRROR/$ver/$file
     local lfile=$DIR/$file-${ver}
 
-    if [ ! -e $lfile ];
-    then
-        curl -sSLf -o $lfile $url
-    fi
-
     printf "    # %s\n" $url
-    printf "    %s: sha256:%s\n" $platform `sha256sum $lfile | awk '{print $1}'`
+    printf "    %s: sha256:%s\n" $platform $(grep $file $lchecksums | awk '{print $1}')
 }
 
 dl_ver() {
     local ver=$1
+    local rchecksums="${MIRROR}/${ver}/checksums.txt"
+    local lchecksums="${DIR}/operatorsdk_${ver}_checksums.txt"
+    if [ ! -e "${lchecksums}" ];
+    then
+        curl -sSLf -o "${lchecksums}" "${rchecksums}"
+    fi
+
+    printf "  # %s\n" $rchecksums
     printf "  %s:\n" $ver
-    dl $ver darwin amd64
-    dl $ver darwin arm64
-    dl $ver linux amd64
-    dl $ver linux arm64
-    dl $ver linux ppc64le
-    dl $ver linux s390x
+    dl $lchecksums $ver darwin amd64
+    dl $lchecksums $ver darwin arm64
+    dl $lchecksums $ver linux amd64
+    dl $lchecksums $ver linux arm64
+    dl $lchecksums $ver linux ppc64le
+    dl $lchecksums $ver linux s390x
 }
 
-dl_ver ${1:-v1.37.0}
+dl_ver ${1:-v1.39.0}
