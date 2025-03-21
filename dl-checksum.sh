@@ -38,4 +38,4 @@ dl_ver() {
     dl $lchecksums $ver linux s390x
 }
 
-dl_ver ${1:-v1.39.1}
+dl_ver ${1:-v1.39.2}
